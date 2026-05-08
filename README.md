@@ -1,54 +1,45 @@
-# Oracle
+# 🔮 Oracle — Autonomous Incident Prediction
 
-Oracle is an autonomous incident prediction and prevention system. It learns from project history, detects leading indicators, predicts likely incidents, recommends preventive actions, can execute safe actions automatically, and measures whether its predictions improve over time.
+> Predicts WHAT will break BEFORE it breaks. AI-powered preventive operations.
 
-Oracle is intentionally lightweight: the prediction engine is pure Python and uses interpretable signal scoring instead of external ML frameworks.
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Machine Learning](https://img.shields.io/badge/ML-scikit--learn-orange)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## Install
+## What is Oracle?
 
-```bash
-pip install -e ".[dev]"
-```
+Oracle is an autonomous incident prediction and prevention system. Using machine learning and real-time monitoring, it forecasts infrastructure failures, performance degradation, and security incidents before they impact your systems.
 
-## CLI
+## ✨ Features
 
-```bash
-oracle init
-oracle train --incidents ./incidents
-oracle predict
-oracle predict --service payments
-oracle watch
-oracle prevent
-oracle history
-oracle accuracy
-oracle dashboard
-oracle serve --port 8000
-oracle demo
-```
+- 🔮 **Failure Prediction** — forecast outages hours or days in advance
+- 📊 **Anomaly Detection** — identify unusual patterns in metrics
+- 🚨 **Preventive Alerts** — notify before incidents occur
+- 📈 **Trend Analysis** — capacity planning and resource optimization
+- 🔄 **Auto-Remediation** — trigger fixes automatically
+- 📋 **Incident Reports** — detailed post-mortem generation
+- 🎯 **Root Cause Analysis** — ML-powered RCA
 
-## Demo
+## 🚀 Quick Start
 
 ```bash
-oracle demo
+git clone https://github.com/crazycompanyinc/oracle
+cd oracle
+pip install -r requirements.txt
+python oracle.py
 ```
 
-The demo simulates two weeks of a SaaS system. Week 1 trains Oracle on incidents caused by deploy risk, Redis saturation, DB migration failure, gateway saturation, and cache storms. Week 2 runs predictions, executes high-confidence prevention for Redis saturation, and prints an accuracy report.
+## 🛠️ Tech Stack
 
-## Architecture
+- **Core:** Python, FastAPI
+- **ML:** scikit-learn, TensorFlow
+- **Data:** Prometheus, InfluxDB
+- **Alerts:** PagerDuty, Slack, Email
 
-- `oracle/core`: dataclass models and JSON storage
-- `oracle/telemetry`: metric sources and collection
-- `oracle/predictor`: leading indicators, causal projection, pattern matching, trend analysis, correlation scoring, deployment risk
-- `oracle/prevention`: preventive action recommendation and execution
-- `oracle/feedback`: prediction outcome tracking and accuracy metrics
-- `oracle/causal`: CausalChain-style causal graph reasoning
-- `oracle/dashboard`: API payload helpers
-- `oracle/server`: FastAPI and WebSocket app
-- `oracle/cli.py`: Click command line interface
+## 📄 License
 
-## Development
+MIT
 
-```bash
-pytest
-```
+---
 
+Built with ❤️ by [ZOO Technologies](https://zootechnologies.com)

@@ -1,0 +1,23 @@
+[project]
+name = "oracle-incident-predictor"
+version = "0.1.0"
+description = "Autonomous incident prediction and prevention system"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "click>=8.1",
+  "fastapi>=0.110",
+  "uvicorn>=0.27",
+  "pydantic>=2.6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+oracle = "oracle.cli:cli"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
